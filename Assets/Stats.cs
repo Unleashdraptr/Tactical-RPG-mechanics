@@ -9,4 +9,6 @@ public class Stats : MonoBehaviour
     public int Attack;
     public string Name;
     public int strength;
+    public int NumID;
+    public bool Turn;
 }

@@ -16,19 +16,31 @@ public class Postions : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        PlayerNumber = PlayerStorage.transform.childCount;
         int Enemies = Random.Range(1, 3);
 
         TilePositions = Tiles.GetComponentsInChildren<Transform>();
         for (int i = 0; i < PlayerNumber; i++)
         {
-            Vector3 Pos = new Vector3(TilePositions[PlayerPositions[i] + 1].position.x, 2, TilePositions[PlayerPositions[i] + 1].position.z);
-            Instantiate(Player, Pos, Quaternion.identity, PlayerStorage.transform.GetChild(i).transform);
-            Tiles.transform.GetChild(i).GetComponent<CanWalkTo>().IsTaken = true;
+            Vector3 Pos = new Vector3(TilePositions[PlayerPositions[i]].position.x, 2, TilePositions[PlayerPositions[i]].position.z);
+            PlayerStorage.transform.GetChild(i).transform.SetPositionAndRotation(Pos, PlayerStorage.transform.GetChild(0).transform.rotation);
+            PlayerStorage.transform.GetChild(i).GetComponent<PlayerOne>().NumID = i + 1;
+            GameObject.Find("UI").GetComponent<Button>().OldPos[i] = Pos;
         }
         for (int i = 0; i < Enemies; i++)
         {
-            Instantiate(Enemy, TilePositions[EnemyPositions[i]+1].position, Quaternion.identity, EnemyStorage.transform);
-            Tiles.transform.GetChild(i).GetComponent<CanWalkTo>().IsTaken = true;
+            Instantiate(Enemy, TilePositions[EnemyPositions[i]].position, Quaternion.identity, EnemyStorage.transform);
+            int ChildNum = 0;
+            for (int j = 0; j < Tiles.transform.childCount; j++)
+            {
+                Debug.Log("Searching for Child");
+                if (Tiles.transform.GetChild(j).transform.position == TilePositions[EnemyPositions[i]].position)
+                {
+                    Debug.Log("Found Child");
+                    ChildNum = j;
+                }
+            }
+            Tiles.transform.GetChild(ChildNum).GetComponent<CanWalkTo>().IsTaken = true;
         }
 
     }

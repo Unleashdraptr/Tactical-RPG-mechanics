@@ -8,7 +8,6 @@ public class PlayerOne : Stats
     void Start()
     {
         HP = 100;
-        Range = 2;
         Name = "Player 1";
         strength = 200;
     }

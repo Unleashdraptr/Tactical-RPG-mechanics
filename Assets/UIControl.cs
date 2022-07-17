@@ -23,24 +23,19 @@ public class UIControl : MonoBehaviour
 
             if(Physics.Raycast(ray, out RaycastHit hitInfo))
             {
-                if(hitInfo.collider.gameObject.GetComponent<PlayerOne>() != null)
+                if(hitInfo.collider.gameObject.GetComponent<Movement>() != null && hitInfo.collider.GetComponent<PlayerOne>().Turn == false)
                 {
                     mr = hitInfo.collider.GetComponent<MeshRenderer>();
-                    OnTarget = true;
                     GameObject.Find("Move").transform.localScale = new Vector3(1, 1, 1);
                     mr.material.EnableKeyword("_EMISSION");
-                    int PRange = hitInfo.collider.GetComponent<Movement>().Range;
+                    int PRange = hitInfo.collider.GetComponent<PlayerOne>().Range;
+                    GameObject.Find("UI").GetComponent<Button>().Num = hitInfo.collider.GetComponent<PlayerOne>().NumID;
                     Vector3 ColliderSize = new Vector3((PRange * 10) + 5, 1, (PRange * 10) + 5);
                     hitInfo.collider.gameObject.transform.GetChild(0).gameObject.SetActive(true);
                     hitInfo.collider.gameObject.transform.GetChild(0).GetComponent<BoxCollider>().size = ColliderSize;
 
                 }
             }
-        }
-        if(Input.GetKeyDown(KeyCode.Escape) && OnTarget == true)
-        {
-            mr.material.DisableKeyword("_EMISSION");
-            GameObject.Find("Battle Options").transform.localScale = new Vector3(0, 0, 0);
         }
     }
 }

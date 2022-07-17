@@ -9,12 +9,15 @@ public class Movement : MonoBehaviour
     public bool OnTarget;
     [Range(1,9)]
     public int Range;
+    public GameObject[] Players;
     Camera cameras;
     public bool Moving = false;
     public bool Moved = false;
+    int Num;
     // Start is called before the first frame update
     void Start()
     {
+        Num = GameObject.Find("UI").GetComponent<Button>().Num;
         cameras = GameObject.Find("Main Camera").GetComponent<Camera>();
         Tiles = GameObject.Find("Tiles");
         TilePositions = Tiles.GetComponentsInChildren<Transform>();
@@ -22,7 +25,7 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GetComponentInParent<UIControl>().OnTarget == true && Moving == true && Moved == false)
+        if (Moving == true && Moved == false)
         {
             if (Input.GetMouseButton(0))
             {
@@ -47,7 +50,7 @@ public class Movement : MonoBehaviour
                                 }
                             }
                             Vector3 Pos = new Vector3(TilePositions[ChildNum+1].position.x, 1, TilePositions[ChildNum+1].position.z);
-                            transform.SetPositionAndRotation(Pos, transform.rotation);                       
+                            Players[Num-1].transform.SetPositionAndRotation(Pos, transform.rotation);                       
                         }
 
                     }
