@@ -11,8 +11,6 @@ GameObject:
   - component: {fileID: 3998985863942848668}
   - component: {fileID: 5270072699636606070}
   - component: {fileID: 1108836211678038648}
-  - component: {fileID: 1018680140781527254}
-  - component: {fileID: 4612541252227862674}
   - component: {fileID: 5050810609387221657}
   m_Layer: 0
   m_Name: Enemy
@@ -84,32 +82,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &1018680140781527254
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5040870934563117176}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 177cba0652aeb7344a42d68bfa6f5fab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DiceNum: 0
---- !u!114 &4612541252227862674
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5040870934563117176}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b6b47c75d75bf3d48876791e04c58c11, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnTarget: 0
 --- !u!135 &5050810609387221657
 SphereCollider:
   m_ObjectHideFlags: 0

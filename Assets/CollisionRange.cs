@@ -2,14 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Range : MonoBehaviour
+public class CollisionRange : MonoBehaviour
 {
     private void OnTriggerEnter(Collider collision)
     {
-        Debug.Log("Can Move here");
-        if (collision.gameObject.tag == "Tile")
+        if (collision.gameObject.tag == "Tile" && collision.gameObject.GetComponent<CanWalkTo>().IsTaken == false)
         {
-            Debug.Log("Can Move here");
             collision.gameObject.GetComponent<CanWalkTo>().CanMoveTo = true;
         }
     }

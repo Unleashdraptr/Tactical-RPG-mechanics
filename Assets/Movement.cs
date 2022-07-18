@@ -6,56 +6,36 @@ public class Movement : MonoBehaviour
 {
     Transform[] TilePositions;
     GameObject Tiles;
-    public bool OnTarget;
-    [Range(1,9)]
-    public int Range;
-    public GameObject[] Players;
-    Camera cameras;
-    public bool Moving = false;
-    public bool Moved = false;
-    int Num;
+    public bool IsMoving;
+    public bool IsTarget;
+    public int Num;
+    public Transform TargetPosition;
     // Start is called before the first frame update
     void Start()
     {
-        Num = GameObject.Find("UI").GetComponent<Button>().Num;
-        cameras = GameObject.Find("Main Camera").GetComponent<Camera>();
+        IsMoving = false;
         Tiles = GameObject.Find("Tiles");
         TilePositions = Tiles.GetComponentsInChildren<Transform>();
+        TargetPosition = transform;
     }
     // Update is called once per frame
     void Update()
     {
-        if (Moving == true && Moved == false)
+        if (IsMoving == true)
         {
-            if (Input.GetMouseButton(0))
+            Debug.Log("Can Move to");
+            int ChildNum = 0;
+            for (int i = 0; i < Tiles.transform.childCount; i++)
             {
-                Ray ray = cameras.ScreenPointToRay(Input.mousePosition);
-
-                if (Physics.Raycast(ray, out RaycastHit hitInfo))
+                Debug.Log("Searching for Child");
+                if (Tiles.transform.GetChild(i).transform.position == TargetPosition.position)
                 {
-                    if (hitInfo.collider.gameObject.tag == "Tile")
-                    {
-                        Debug.Log("Move");
-                        if (hitInfo.collider.GetComponent<CanWalkTo>().CanMoveTo == true && hitInfo.collider.GetComponent<CanWalkTo>().IsTaken == false)
-                        {
-                            Debug.Log("Can Move to");
-                            int ChildNum = 0;
-                            for (int i = 0; i < Tiles.transform.childCount; i++)
-                            {
-                                Debug.Log("Searching for Child");
-                                if (Tiles.transform.GetChild(i).transform.position == hitInfo.collider.transform.position)
-                                {
-                                    Debug.Log("Found Child");
-                                    ChildNum = i;
-                                }
-                            }
-                            Vector3 Pos = new Vector3(TilePositions[ChildNum+1].position.x, 1, TilePositions[ChildNum+1].position.z);
-                            Players[Num-1].transform.SetPositionAndRotation(Pos, transform.rotation);                       
-                        }
-
-                    }
+                    Debug.Log("Found Child");
+                    ChildNum = i;
                 }
             }
+            Vector3 Pos = new Vector3(TargetPosition.position.x, 2, TargetPosition.position.z);
+            transform.SetPositionAndRotation(Pos, transform.rotation);
         }
     }
 }
