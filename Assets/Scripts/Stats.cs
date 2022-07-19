@@ -12,9 +12,4 @@ public class Stats : MonoBehaviour
     public int NumID;
     public bool TurnSpent;
     public bool Player;
-    //Dice used, Move radius, Move direction, Status Inflict Type
-    public int[] MoveSetup = { 0, 0, 0, 0, 0 };
-    public bool MovePlayerMove;
-                                  //N, NE, E, SE, S, SW, W, NW
-    public int[] movedirections = { 0, 0,  0, 0,  0, 0,  0, 0 };
 }

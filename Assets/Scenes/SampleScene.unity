@@ -241,6 +241,7 @@ MonoBehaviour:
   CanMoveTo: 0
   IsTaken: 0
   TakenID: 0
+  CanAttack: 0
 --- !u!1 &86458576
 GameObject:
   m_ObjectHideFlags: 0
@@ -359,6 +360,7 @@ MonoBehaviour:
   CanMoveTo: 0
   IsTaken: 0
   TakenID: 0
+  CanAttack: 0
 --- !u!1 &92755199
 GameObject:
   m_ObjectHideFlags: 0
@@ -477,6 +479,7 @@ MonoBehaviour:
   CanMoveTo: 0
   IsTaken: 0
   TakenID: 0
+  CanAttack: 0
 --- !u!1 &106851797
 GameObject:
   m_ObjectHideFlags: 0
@@ -728,6 +731,7 @@ MonoBehaviour:
   CanMoveTo: 0
   IsTaken: 0
   TakenID: 0
+  CanAttack: 0
 --- !u!1 &254405179
 GameObject:
   m_ObjectHideFlags: 0
@@ -846,6 +850,7 @@ MonoBehaviour:
   CanMoveTo: 0
   IsTaken: 0
   TakenID: 0
+  CanAttack: 0
 --- !u!1 &273847633
 GameObject:
   m_ObjectHideFlags: 0
@@ -964,6 +969,7 @@ MonoBehaviour:
   CanMoveTo: 0
   IsTaken: 0
   TakenID: 0
+  CanAttack: 0
 --- !u!1 &292360788
 GameObject:
   m_ObjectHideFlags: 0
@@ -1161,6 +1167,7 @@ MonoBehaviour:
   CanMoveTo: 0
   IsTaken: 0
   TakenID: 0
+  CanAttack: 0
 --- !u!1 &338698858
 GameObject:
   m_ObjectHideFlags: 0
@@ -1279,6 +1286,7 @@ MonoBehaviour:
   CanMoveTo: 0
   IsTaken: 0
   TakenID: 0
+  CanAttack: 0
 --- !u!1 &344700864
 GameObject:
   m_ObjectHideFlags: 0
@@ -1397,6 +1405,7 @@ MonoBehaviour:
   CanMoveTo: 0
   IsTaken: 0
   TakenID: 0
+  CanAttack: 0
 --- !u!1 &361416597
 GameObject:
   m_ObjectHideFlags: 0
@@ -1515,6 +1524,7 @@ MonoBehaviour:
   CanMoveTo: 0
   IsTaken: 0
   TakenID: 0
+  CanAttack: 0
 --- !u!1 &394029187
 GameObject:
   m_ObjectHideFlags: 0
@@ -1633,6 +1643,7 @@ MonoBehaviour:
   CanMoveTo: 0
   IsTaken: 0
   TakenID: 0
+  CanAttack: 0
 --- !u!1 &505647054
 GameObject:
   m_ObjectHideFlags: 0
@@ -1751,6 +1762,7 @@ MonoBehaviour:
   CanMoveTo: 0
   IsTaken: 0
   TakenID: 0
+  CanAttack: 0
 --- !u!1 &543557684
 GameObject:
   m_ObjectHideFlags: 0
@@ -1869,6 +1881,7 @@ MonoBehaviour:
   CanMoveTo: 0
   IsTaken: 0
   TakenID: 0
+  CanAttack: 0
 --- !u!1 &547708653
 GameObject:
   m_ObjectHideFlags: 0
@@ -1987,6 +2000,7 @@ MonoBehaviour:
   CanMoveTo: 0
   IsTaken: 0
   TakenID: 0
+  CanAttack: 0
 --- !u!1 &548472042
 GameObject:
   m_ObjectHideFlags: 0
@@ -2238,6 +2252,7 @@ MonoBehaviour:
   CanMoveTo: 0
   IsTaken: 0
   TakenID: 0
+  CanAttack: 0
 --- !u!1 &566385119
 GameObject:
   m_ObjectHideFlags: 0
@@ -2489,6 +2504,7 @@ MonoBehaviour:
   CanMoveTo: 0
   IsTaken: 0
   TakenID: 0
+  CanAttack: 0
 --- !u!1 &700554994
 GameObject:
   m_ObjectHideFlags: 0
@@ -2606,16 +2622,14 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  Tiles: {fileID: 1386819124}
   PlayerStorage: {fileID: 2487967966994246437}
-  CalledForRange: 0
+  Tiles: {fileID: 1386819124}
+  collisions: {fileID: 2487967968285571964}
   OldPos:
   - {x: 5.3374015e+14, y: 8.14e-43, z: 5.2166636e-11}
   - {x: 1.7748036e+28, y: 1.7204163e+29, z: 8.11e-43}
   - {x: 4.6e-44, y: 1.8062696e+28, z: 5.3374015e+14}
   TargetNum: 0
-  AdditonalNum: 000000000400000008000000
-  collisions: {fileID: 2487967968285571964}
   UIcontrol: {fileID: 1809655004}
 --- !u!1 &705067301
 GameObject:
@@ -2961,6 +2975,7 @@ MonoBehaviour:
   CanMoveTo: 0
   IsTaken: 0
   TakenID: 0
+  CanAttack: 0
 --- !u!1 &736340538
 GameObject:
   m_ObjectHideFlags: 0
@@ -3079,6 +3094,7 @@ MonoBehaviour:
   CanMoveTo: 0
   IsTaken: 0
   TakenID: 0
+  CanAttack: 0
 --- !u!1 &738583930
 GameObject:
   m_ObjectHideFlags: 0
@@ -3229,6 +3245,7 @@ MonoBehaviour:
   CanMoveTo: 0
   IsTaken: 0
   TakenID: 0
+  CanAttack: 0
 --- !u!1 &810315293
 GameObject:
   m_ObjectHideFlags: 0
@@ -3347,6 +3364,7 @@ MonoBehaviour:
   CanMoveTo: 0
   IsTaken: 0
   TakenID: 0
+  CanAttack: 0
 --- !u!1 &826120108
 GameObject:
   m_ObjectHideFlags: 0
@@ -3598,6 +3616,7 @@ MonoBehaviour:
   CanMoveTo: 0
   IsTaken: 0
   TakenID: 0
+  CanAttack: 0
 --- !u!1 &869644287
 GameObject:
   m_ObjectHideFlags: 0
@@ -3849,6 +3868,7 @@ MonoBehaviour:
   CanMoveTo: 0
   IsTaken: 0
   TakenID: 0
+  CanAttack: 0
 --- !u!1 &896799011
 GameObject:
   m_ObjectHideFlags: 0
@@ -3919,7 +3939,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Move somewhere else
+  m_Text: Cancel
 --- !u!222 &896799014
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3958,6 +3978,80 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &907811976
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 907811977}
+  - component: {fileID: 907811980}
+  - component: {fileID: 907811979}
+  - component: {fileID: 907811978}
+  m_Layer: 0
+  m_Name: Attackcollision
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &907811977
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 907811976}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -1, z: 32.3}
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_Children: []
+  m_Father: {fileID: 1265792746}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &907811978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 907811976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c95b5bff03c3474c889d298f442c377, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &907811979
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 907811976}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &907811980
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 907811976}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -4159,6 +4253,7 @@ MonoBehaviour:
   CanMoveTo: 0
   IsTaken: 0
   TakenID: 0
+  CanAttack: 0
 --- !u!1 &1027341857
 GameObject:
   m_ObjectHideFlags: 0
@@ -4277,6 +4372,7 @@ MonoBehaviour:
   CanMoveTo: 0
   IsTaken: 0
   TakenID: 0
+  CanAttack: 0
 --- !u!1 &1073008777
 GameObject:
   m_ObjectHideFlags: 0
@@ -4433,6 +4529,7 @@ MonoBehaviour:
   CanMoveTo: 0
   IsTaken: 0
   TakenID: 0
+  CanAttack: 0
 --- !u!1 &1136373539
 GameObject:
   m_ObjectHideFlags: 0
@@ -4626,6 +4723,7 @@ MonoBehaviour:
   CanMoveTo: 0
   IsTaken: 0
   TakenID: 0
+  CanAttack: 0
 --- !u!1 &1261257173
 GameObject:
   m_ObjectHideFlags: 0
@@ -4744,6 +4842,7 @@ MonoBehaviour:
   CanMoveTo: 0
   IsTaken: 0
   TakenID: 0
+  CanAttack: 0
 --- !u!1 &1263156644
 GameObject:
   m_ObjectHideFlags: 0
@@ -4862,6 +4961,7 @@ MonoBehaviour:
   CanMoveTo: 0
   IsTaken: 0
   TakenID: 0
+  CanAttack: 0
 --- !u!1 &1265792745
 GameObject:
   m_ObjectHideFlags: 0
@@ -4890,6 +4990,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2487967968285571963}
+  - {fileID: 907811977}
   m_Father: {fileID: 738583932}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5011,6 +5112,7 @@ MonoBehaviour:
   CanMoveTo: 0
   IsTaken: 0
   TakenID: 0
+  CanAttack: 0
 --- !u!1 &1384840436
 GameObject:
   m_ObjectHideFlags: 0
@@ -5129,6 +5231,7 @@ MonoBehaviour:
   CanMoveTo: 0
   IsTaken: 0
   TakenID: 0
+  CanAttack: 0
 --- !u!1 &1386819124
 GameObject:
   m_ObjectHideFlags: 0
@@ -5451,6 +5554,7 @@ MonoBehaviour:
   CanMoveTo: 0
   IsTaken: 0
   TakenID: 0
+  CanAttack: 0
 --- !u!1 &1558686310
 GameObject:
   m_ObjectHideFlags: 0
@@ -5569,6 +5673,7 @@ MonoBehaviour:
   CanMoveTo: 0
   IsTaken: 0
   TakenID: 0
+  CanAttack: 0
 --- !u!1 &1562617925
 GameObject:
   m_ObjectHideFlags: 0
@@ -5687,6 +5792,7 @@ MonoBehaviour:
   CanMoveTo: 0
   IsTaken: 0
   TakenID: 0
+  CanAttack: 0
 --- !u!1 &1565322364
 GameObject:
   m_ObjectHideFlags: 0
@@ -5805,6 +5911,7 @@ MonoBehaviour:
   CanMoveTo: 0
   IsTaken: 0
   TakenID: 0
+  CanAttack: 0
 --- !u!1 &1602061094
 GameObject:
   m_ObjectHideFlags: 0
@@ -5923,6 +6030,7 @@ MonoBehaviour:
   CanMoveTo: 0
   IsTaken: 0
   TakenID: 0
+  CanAttack: 0
 --- !u!1 &1615719901
 GameObject:
   m_ObjectHideFlags: 0
@@ -6041,6 +6149,7 @@ MonoBehaviour:
   CanMoveTo: 0
   IsTaken: 0
   TakenID: 0
+  CanAttack: 0
 --- !u!1 &1660512161
 GameObject:
   m_ObjectHideFlags: 0
@@ -6111,7 +6220,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Run
+  m_Text: Wait
 --- !u!222 &1660512164
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6238,6 +6347,7 @@ MonoBehaviour:
   CanMoveTo: 0
   IsTaken: 0
   TakenID: 0
+  CanAttack: 0
 --- !u!1 &1731470031
 GameObject:
   m_ObjectHideFlags: 0
@@ -6466,7 +6576,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Confirm
+  m_Text: Move Here
 --- !u!222 &1801403977
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6593,6 +6703,7 @@ MonoBehaviour:
   CanMoveTo: 0
   IsTaken: 0
   TakenID: 0
+  CanAttack: 0
 --- !u!1 &1809655004
 GameObject:
   m_ObjectHideFlags: 0
@@ -6642,6 +6753,7 @@ MonoBehaviour:
   PlayerStoarge: {fileID: 2487967966994246437}
   TargetNum: 0
   collisions: {fileID: 2487967968285571964}
+  AttackCollisions: {fileID: 907811976}
   Tiles: {fileID: 1386819124}
 --- !u!1 &1814853640
 GameObject:
@@ -6761,6 +6873,7 @@ MonoBehaviour:
   CanMoveTo: 0
   IsTaken: 0
   TakenID: 0
+  CanAttack: 0
 --- !u!1 &1816058695
 GameObject:
   m_ObjectHideFlags: 0
@@ -6879,6 +6992,7 @@ MonoBehaviour:
   CanMoveTo: 0
   IsTaken: 0
   TakenID: 0
+  CanAttack: 0
 --- !u!1 &1866861970
 GameObject:
   m_ObjectHideFlags: 0
@@ -6997,6 +7111,7 @@ MonoBehaviour:
   CanMoveTo: 0
   IsTaken: 0
   TakenID: 0
+  CanAttack: 0
 --- !u!1 &1873343204
 GameObject:
   m_ObjectHideFlags: 0
@@ -7115,6 +7230,7 @@ MonoBehaviour:
   CanMoveTo: 0
   IsTaken: 0
   TakenID: 0
+  CanAttack: 0
 --- !u!1 &1936010321
 GameObject:
   m_ObjectHideFlags: 0
@@ -7233,6 +7349,7 @@ MonoBehaviour:
   CanMoveTo: 0
   IsTaken: 0
   TakenID: 0
+  CanAttack: 0
 --- !u!1 &2012008507
 GameObject:
   m_ObjectHideFlags: 0
@@ -7389,6 +7506,7 @@ MonoBehaviour:
   CanMoveTo: 0
   IsTaken: 0
   TakenID: 0
+  CanAttack: 0
 --- !u!1 &2085779957
 GameObject:
   m_ObjectHideFlags: 0
@@ -7507,6 +7625,7 @@ MonoBehaviour:
   CanMoveTo: 0
   IsTaken: 0
   TakenID: 0
+  CanAttack: 0
 --- !u!1 &2106469574
 GameObject:
   m_ObjectHideFlags: 0
@@ -7625,6 +7744,7 @@ MonoBehaviour:
   CanMoveTo: 0
   IsTaken: 0
   TakenID: 0
+  CanAttack: 0
 --- !u!1 &2112065335
 GameObject:
   m_ObjectHideFlags: 0
@@ -7743,6 +7863,7 @@ MonoBehaviour:
   CanMoveTo: 0
   IsTaken: 0
   TakenID: 0
+  CanAttack: 0
 --- !u!1 &2140247910
 GameObject:
   m_ObjectHideFlags: 0
@@ -7861,6 +7982,7 @@ MonoBehaviour:
   CanMoveTo: 0
   IsTaken: 0
   TakenID: 0
+  CanAttack: 0
 --- !u!1 &2142335082
 GameObject:
   m_ObjectHideFlags: 0
@@ -7979,6 +8101,7 @@ MonoBehaviour:
   CanMoveTo: 0
   IsTaken: 0
   TakenID: 0
+  CanAttack: 0
 --- !u!4 &2487967966994246432
 Transform:
   m_ObjectHideFlags: 0
@@ -8057,13 +8180,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2487967968285571964}
-  m_LocalRotation: {x: -0, y: 0.38268343, z: -0, w: 0.92387956}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -1, z: 32.3}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 1265792746}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2487967968285571964
 GameObject:
   m_ObjectHideFlags: 0
@@ -8074,8 +8197,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2487967968285571963}
   - component: {fileID: 2487967968285571961}
-  - component: {fileID: 2487967968285571962}
   - component: {fileID: 2487967968285571960}
+  - component: {fileID: 2487967968285571962}
   m_Layer: 0
   m_Name: Collision
   m_TagString: Untagged

@@ -13,6 +13,7 @@ public class UIControl : MonoBehaviour
     public GameObject PlayerStoarge;
     public int TargetNum;
     public GameObject collisions;
+    public GameObject AttackCollisions;
     bool HasATargetSelected;
     public GameObject Tiles;
     IEnumerator Start()
@@ -62,6 +63,7 @@ public class UIControl : MonoBehaviour
                     int Range = Players[TargetNum].GetComponent<Stats>().Range;
                     Vector3 Pos = new Vector3(Players[TargetNum].transform.position.x, 0, Players[TargetNum].transform.position.z);
                     collisions.transform.SetPositionAndRotation(Pos, collisions.transform.rotation);
+                    collisions.transform.eulerAngles = new Vector3(0, 45, 0);
                     Vector3 ColliderSize = new Vector3((Range-1) * 10, 1, (Range - 1) * 10);
                     collisions.gameObject.SetActive(true);
                     collisions.GetComponent<BoxCollider>().size = ColliderSize;
@@ -69,15 +71,31 @@ public class UIControl : MonoBehaviour
 
                 if (Hit.collider.gameObject.tag == "Tile")
                 {
-                    if ((Hit.collider.GetComponent<CanWalkTo>().CanMoveTo == true && Hit.collider.GetComponent<CanWalkTo>().IsTaken == false) || ( Hit.collider.GetComponent<CanWalkTo>().IsTaken == true && Hit.collider.GetComponent<CanWalkTo>().TakenID == TargetNum))
+                    if (OnTarget == true)
                     {
-                        //Gives the player the position of the selected tile and tells it to move
-                        Players[TargetNum].GetComponent<Movement>().IsMoving = true;
-                        Transform TargetPos = Hit.collider.transform;
-                        Players[TargetNum].GetComponent<Movement>().TargetPosition = TargetPos;
-                        
-                    }
+                        if ((Hit.collider.GetComponent<CanWalkTo>().CanMoveTo == true && Hit.collider.GetComponent<CanWalkTo>().IsTaken == false) || (Hit.collider.GetComponent<CanWalkTo>().IsTaken == true && Hit.collider.GetComponent<CanWalkTo>().TakenID == TargetNum))
+                        {
+                            if (Players[TargetNum].GetComponent<Stats>().TurnSpent == false)
+                            {
+                                //Gives the player the position of the selected tile and tells it to move
+                                Transform TargetPos = Hit.collider.transform;
+                                Players[TargetNum].GetComponent<Movement>().TargetPosition = TargetPos;
 
+                                //Moves the attack detecting with the player, sets its limits and then sets it awake to collide with the tiles
+                                Vector3 Pos = new Vector3(Players[TargetNum].transform.position.x, 0, Players[TargetNum].transform.position.z);
+                                AttackCollisions.transform.SetPositionAndRotation(Pos, AttackCollisions.transform.rotation);
+
+                                //Sets the colliders size to fit the attack radius
+                                Vector3 ColliderOffset = new Vector3(Players[TargetNum].GetComponent<MoveLibrary>().XOffset * 5, 0, -Players[TargetNum].GetComponent<MoveLibrary>().YOffset * 5);
+                                Vector3 ColliderSize = new Vector3(Players[TargetNum].GetComponent<MoveLibrary>().CollisionLength * 4, 1, Players[TargetNum].GetComponent<MoveLibrary>().CollisionWidth * 4);
+                                AttackCollisions.GetComponent<BoxCollider>().center = ColliderOffset;
+                                AttackCollisions.GetComponent<BoxCollider>().size = ColliderSize;
+                                AttackCollisions.gameObject.SetActive(true);
+
+                            }
+
+                        }
+                    }
                 }
             }
         }

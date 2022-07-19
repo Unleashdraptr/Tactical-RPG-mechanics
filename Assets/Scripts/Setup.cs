@@ -38,10 +38,8 @@ public class Setup : MonoBehaviour
             int ChildNum = 0;
             for (int j = 0; j < Tiles.transform.childCount; j++)
             {
-                Debug.Log("Searching for Child");
                 if (Tiles.transform.GetChild(j).transform.position == TilePositions[EnemyPositions[i]].position)
                 {
-                    Debug.Log("Found Child");
                     ChildNum = j;
                 }
             }

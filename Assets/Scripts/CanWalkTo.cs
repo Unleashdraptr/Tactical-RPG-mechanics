@@ -8,4 +8,5 @@ public class CanWalkTo : MonoBehaviour
     public bool CanMoveTo;
     public bool IsTaken;
     public int TakenID;
+    public bool CanAttack;
 }
