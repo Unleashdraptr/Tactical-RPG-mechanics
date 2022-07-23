@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Button : MonoBehaviour
+public class ButtonsAndUI : MonoBehaviour
 {
     public Transform[] Players;
     public GameObject PlayerStorage;
     public GameObject Tiles;
     public GameObject collisions;
 
-    public Vector3[] OldPos;
+    public Transform[] OldPos;
     public int TargetNum;
     public GameObject UIcontrol;
     IEnumerator Start()
@@ -23,9 +23,9 @@ public class Button : MonoBehaviour
         {
             collisions.gameObject.SetActive(false);
         }
-        if (Players[TargetNum].GetComponent<Stats>().TurnSpent == false)
+        if (Players[TargetNum-1].GetComponent<Stats>().TurnSpent == false)
         {
-            UIcontrol.GetComponent<UIControl>().OnTarget = true;
+            UIcontrol.GetComponent<Raycast>().OnTarget = true;
             for (int i = 0; i < Tiles.transform.childCount; i++)
             {
                 if (Tiles.transform.GetChild(i).GetComponent<CanWalkTo>().CanMoveTo == true && Tiles.transform.GetChild(i).GetComponent<CanWalkTo>().IsTaken == false || Tiles.transform.GetChild(i).GetComponent<CanWalkTo>().IsTaken == true && Tiles.transform.GetChild(i).GetComponent<CanWalkTo>().TakenID == TargetNum)
@@ -39,7 +39,7 @@ public class Button : MonoBehaviour
     }
     public void OnConfirmButton()
     {
-        UIcontrol.GetComponent<UIControl>().OnTarget = false;
+        UIcontrol.GetComponent<Raycast>().OnTarget = false;
         GameObject.Find("Moved").transform.localScale = new Vector3(1, 1, 1);
         GameObject.Find("Moving").transform.localScale = new Vector3(0, 0, 0);
         for (int i = 0; i < Tiles.transform.childCount; i++)
@@ -69,15 +69,15 @@ public class Button : MonoBehaviour
 
     public void OnWaitButton()
     {
-        Players[TargetNum].GetComponent<Stats>().TurnSpent = true;
-        OldPos[TargetNum - 1] = Players[TargetNum].transform.position;
+        Players[TargetNum-1].GetComponent<Stats>().TurnSpent = true;
+        OldPos[TargetNum-1] = Players[TargetNum-1].transform;
         GameObject.Find("Moved").transform.localScale = new Vector3(0, 0, 0);
         GameObject.Find("Move").transform.localScale = new Vector3(1, 1, 1);
         for (int i = 0; i < Tiles.transform.childCount; i++)
         {
             Tiles.transform.GetChild(i).GetComponent<MeshRenderer>().material.DisableKeyword("_EMISSION");
         }
-        UIcontrol.GetComponent<UIControl>().OnTarget = false;
+        UIcontrol.GetComponent<Raycast>().OnTarget = false;
     }
     public void MoveConfirmCancelButton()
     {
@@ -86,7 +86,7 @@ public class Button : MonoBehaviour
         {
             Tiles.transform.GetChild(i).GetComponent<CanWalkTo>().CanAttack = false;
         }
-        UIcontrol.GetComponent<UIControl>().OnTarget = true;
+        UIcontrol.GetComponent<Raycast>().OnTarget = true;
         GameObject.Find("Moving").transform.localScale = new Vector3(1, 1, 1);
         GameObject.Find("Moved").transform.localScale = new Vector3(0, 0, 0);
         for (int i = 0; i < Tiles.transform.childCount; i++)
@@ -103,14 +103,14 @@ public class Button : MonoBehaviour
         GameObject.Find("Moving").transform.localScale = new Vector3(0, 0, 0);
         GameObject.Find("Move").transform.localScale = new Vector3(1, 1, 1);
 
-        //Removes the presets to say which character should be moving
-        UIcontrol.GetComponent<UIControl>().OnTarget = false;
-        Players[TargetNum].GetComponentInChildren<Movement>().transform.SetPositionAndRotation(OldPos[TargetNum-1], Players[TargetNum - 1].GetComponentInChildren<Transform>().rotation);
+
+        Debug.Log("Move");
+        Players[TargetNum].GetComponent<CharacterMovement>().TargetPosition = OldPos[TargetNum-1];
         //Resets all tiles that can be moved to and what players the scripts will use
         for (int i = 0; i < Tiles.transform.childCount; i++)
         {
             Tiles.transform.GetChild(i).GetComponent<MeshRenderer>().material.DisableKeyword("_EMISSION");
         }
-        UIcontrol.GetComponent<UIControl>().OnTarget = false;
+        UIcontrol.GetComponent<Raycast>().OnTarget = false;
     }
 }

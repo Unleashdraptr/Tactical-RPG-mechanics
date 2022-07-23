@@ -112,7 +112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 0
-  Range: 3
+  Range: 4
   Attack: 0
   Name: 
   strength: 0

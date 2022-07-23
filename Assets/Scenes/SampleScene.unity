@@ -2599,7 +2599,7 @@ RectTransform:
   m_Children:
   - {fileID: 1073008778}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2626,9 +2626,9 @@ MonoBehaviour:
   Tiles: {fileID: 1386819124}
   collisions: {fileID: 2487967968285571964}
   OldPos:
-  - {x: 5.3374015e+14, y: 8.14e-43, z: 5.2166636e-11}
-  - {x: 1.7748036e+28, y: 1.7204163e+29, z: 8.11e-43}
-  - {x: 4.6e-44, y: 1.8062696e+28, z: 5.3374015e+14}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   TargetNum: 0
   UIcontrol: {fileID: 1809655004}
 --- !u!1 &705067301
@@ -3125,7 +3125,7 @@ Transform:
   - {fileID: 2487967966994246432}
   - {fileID: 1265792746}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &796132330
 GameObject:
@@ -3976,7 +3976,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &907811976
 GameObject:
@@ -4598,7 +4598,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -5241,7 +5241,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1386819125}
-  - component: {fileID: 1386819126}
   m_Layer: 0
   m_Name: Tiles
   m_TagString: Untagged
@@ -5312,27 +5311,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1386819126
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1386819124}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 765667cd0229238488b31897c98cddd0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PlayerPositions: 030000000400000005000000
-  EnemyPositions: 20000000210000002200000023000000
-  PlayerNumber: 3
-  Enemy: {fileID: 5040870934563117176, guid: ee84d1f61225b2c49a0531a824f94580, type: 3}
-  Player: {fileID: 83999005610465775, guid: 6ecda47922af3d04fb9de6e6d7fc46a5, type: 3}
-  TilePositions: []
-  Tiles: {fileID: 1386819124}
-  EnemyStorage: {fileID: 904206594}
-  PlayerStorage: {fileID: 2487967966994246437}
 --- !u!1 &1401094940
 GameObject:
   m_ObjectHideFlags: 0
@@ -5397,7 +5375,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1433993113
 GameObject:
@@ -6714,6 +6692,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1809655005}
   - component: {fileID: 1809655006}
+  - component: {fileID: 1809655007}
+  - component: {fileID: 1809655008}
   m_Layer: 0
   m_Name: PlayerPOV
   m_TagString: Untagged
@@ -6734,7 +6714,7 @@ Transform:
   m_Children:
   - {fileID: 963194228}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1809655006
 MonoBehaviour:
@@ -6748,13 +6728,49 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6b47c75d75bf3d48876791e04c58c11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnTarget: 0
+  state: 0
+  Players: []
+  PlayerStorage: {fileID: 2487967966994246437}
+--- !u!114 &1809655007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1809655004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf2b9c6bd26b43e4a844c74911e95554, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AttackCollisions: {fileID: 907811976}
+  collisions: {fileID: 2487967968285571964}
   Players: []
   PlayerStoarge: {fileID: 2487967966994246437}
-  TargetNum: 0
-  collisions: {fileID: 2487967968285571964}
-  AttackCollisions: {fileID: 907811976}
   Tiles: {fileID: 1386819124}
+  OnTarget: 0
+  TargetNum: 0
+--- !u!114 &1809655008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1809655004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 765667cd0229238488b31897c98cddd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerPositions: 030000000400000005000000
+  EnemyPositions: 2d0000002e0000002f000000
+  PlayerNumber: 1
+  Enemy: {fileID: 5040870934563117176, guid: ee84d1f61225b2c49a0531a824f94580, type: 3}
+  Player: {fileID: 83999005610465775, guid: 6ecda47922af3d04fb9de6e6d7fc46a5, type: 3}
+  TilePositions: []
+  Tiles: {fileID: 1386819124}
+  EnemyStorage: {fileID: 904206594}
+  PlayerStorage: {fileID: 904206594}
 --- !u!1 &1814853640
 GameObject:
   m_ObjectHideFlags: 0

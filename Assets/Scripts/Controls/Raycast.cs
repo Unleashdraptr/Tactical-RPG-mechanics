@@ -1,39 +1,39 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class UIControl : MonoBehaviour
+public class Raycast : MonoBehaviour
 {
-    Camera cameras;
-    GameObject UI;
-    public bool OnTarget;
-    MeshRenderer mr;
+    public GameObject AttackCollisions;
+    public GameObject collisions;
     public Transform[] Players;
     public GameObject PlayerStoarge;
-    public int TargetNum;
-    public GameObject collisions;
-    public GameObject AttackCollisions;
-    bool HasATargetSelected;
     public GameObject Tiles;
+
+    public bool OnTarget;
+    public int TargetNum;
+
+    bool HasATargetSelected;
+    MeshRenderer mr;
+    // Start is called before the first frame update
     IEnumerator Start()
     {
         HasATargetSelected = false;
 
-        //Grabs the camera for the Raycast and all players on the field
-        cameras = GameObject.Find("Main Camera").GetComponent<Camera>();
         yield return new WaitForSeconds(0.5f);
         Players = PlayerStoarge.GetComponentsInChildren<Transform>();
     }
+
+    // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0) && GetComponent<TurnController>().state == GameTurn.PlayerTurn)
         {
-            Ray ray = cameras.ScreenPointToRay(Input.mousePosition);
+            Ray ray = GameObject.Find("Main Camera").GetComponent<Camera>().ScreenPointToRay(Input.mousePosition);
 
-            if(Physics.Raycast(ray, out RaycastHit Hit))
+            if (Physics.Raycast(ray, out RaycastHit Hit))
             {
-                if(Hit.collider.GetComponent<Movement>() != null && Hit.collider.GetComponent<Stats>().TurnSpent == false && Hit.collider.GetComponent<Stats>().Player == true && OnTarget == false)
+                if (Hit.collider.GetComponent<CharacterMovement>() != null && Hit.collider.GetComponent<Stats>().TurnSpent == false && Hit.collider.GetComponent<Stats>().Player == true && OnTarget == false)
                 {
                     //Removes previously selected player's highlighter and viable positions
                     //only runs if there has been someone else selected
@@ -57,14 +57,14 @@ public class UIControl : MonoBehaviour
 
                     //Sets code to change logic to move and operate that target
                     TargetNum = Hit.collider.GetComponent<Stats>().NumID;
-                    GameObject.Find("UI").GetComponent<Button>().TargetNum = TargetNum;
+                    GameObject.Find("UI").GetComponent<ButtonsAndUI>().TargetNum = TargetNum;
 
                     //Checks the range that the target can move to and see its limits
-                    int Range = Players[TargetNum].GetComponent<Stats>().Range;
-                    Vector3 Pos = new Vector3(Players[TargetNum].transform.position.x, 0, Players[TargetNum].transform.position.z);
+                    int Range = Players[TargetNum-1].GetComponent<Stats>().Range;
+                    Vector3 Pos = new Vector3(Players[TargetNum-1].transform.position.x, 0, Players[TargetNum-1].transform.position.z);
+                    Vector3 ColliderSize = new Vector3((Range - 1) * 10, 1, (Range - 1) * 10);
                     collisions.transform.SetPositionAndRotation(Pos, collisions.transform.rotation);
                     collisions.transform.eulerAngles = new Vector3(0, 45, 0);
-                    Vector3 ColliderSize = new Vector3((Range-1) * 10, 1, (Range - 1) * 10);
                     collisions.gameObject.SetActive(true);
                     collisions.GetComponent<BoxCollider>().size = ColliderSize;
                 }
@@ -79,7 +79,7 @@ public class UIControl : MonoBehaviour
                             {
                                 //Gives the player the position of the selected tile and tells it to move
                                 Transform TargetPos = Hit.collider.transform;
-                                Players[TargetNum].GetComponent<Movement>().TargetPosition = TargetPos;
+                                Players[TargetNum].GetComponent<CharacterMovement>().TargetPosition = TargetPos;
 
                                 //Moves the attack detecting with the player, sets its limits and then sets it awake to collide with the tiles
                                 Vector3 Pos = new Vector3(Players[TargetNum].transform.position.x, 0, Players[TargetNum].transform.position.z);

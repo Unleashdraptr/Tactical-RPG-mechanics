@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Setup : MonoBehaviour
+public class InitialSetup : MonoBehaviour
 {
     public int[] PlayerPositions = { 3, 4, 5 };
     public int[] EnemyPositions = { 45, 46, 47 };
@@ -14,7 +14,7 @@ public class Setup : MonoBehaviour
     public GameObject EnemyStorage;
     public GameObject PlayerStorage;
     // Start is called before the first frame update
-    void Start()
+    public void SetupGame()
     {
         //Amont of enemies to spawn
         int Enemies = Random.Range(1, 3);
@@ -29,7 +29,7 @@ public class Setup : MonoBehaviour
             Tiles.transform.GetChild(PlayerPositions[i]-1).GetComponent<CanWalkTo>().IsTaken = true;
             Tiles.transform.GetChild(PlayerPositions[i]-1).GetComponent<CanWalkTo>().TakenID = i + 1;
             PlayerStorage.transform.GetChild(i).GetComponent<Stats>().NumID = i + 1;
-            GameObject.Find("UI").GetComponent<Button>().OldPos[i] = Pos;
+            GameObject.Find("UI").GetComponent<ButtonsAndUI>().OldPos[i] = TilePositions[PlayerPositions[i]];
         }
         for (int i = 0; i < Enemies; i++)
         {
