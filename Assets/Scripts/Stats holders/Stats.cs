@@ -12,4 +12,5 @@ public class Stats : MonoBehaviour
     public int NumID;
     public bool TurnSpent;
     public bool Player;
+    public int[] PlayerMoveID = { 1, 2, 3 };
 }

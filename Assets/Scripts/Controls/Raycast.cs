@@ -60,9 +60,9 @@ public class Raycast : MonoBehaviour
                     GameObject.Find("UI").GetComponent<ButtonsAndUI>().TargetNum = TargetNum;
 
                     //Checks the range that the target can move to and see its limits
-                    int Range = Players[TargetNum-1].GetComponent<Stats>().Range;
-                    Vector3 Pos = new Vector3(Players[TargetNum-1].transform.position.x, 0, Players[TargetNum-1].transform.position.z);
-                    Vector3 ColliderSize = new Vector3((Range - 1) * 10, 1, (Range - 1) * 10);
+                    int Range = Players[TargetNum].GetComponent<Stats>().Range;
+                    Vector3 Pos = new Vector3(Players[TargetNum].transform.position.x, 0, Players[TargetNum].transform.position.z);
+                    Vector3 ColliderSize = new Vector3((Range - 1) * 9, 1, (Range - 1) * 9);
                     collisions.transform.SetPositionAndRotation(Pos, collisions.transform.rotation);
                     collisions.transform.eulerAngles = new Vector3(0, 45, 0);
                     collisions.gameObject.SetActive(true);
@@ -80,18 +80,6 @@ public class Raycast : MonoBehaviour
                                 //Gives the player the position of the selected tile and tells it to move
                                 Transform TargetPos = Hit.collider.transform;
                                 Players[TargetNum].GetComponent<CharacterMovement>().TargetPosition = TargetPos;
-
-                                //Moves the attack detecting with the player, sets its limits and then sets it awake to collide with the tiles
-                                Vector3 Pos = new Vector3(Players[TargetNum].transform.position.x, 0, Players[TargetNum].transform.position.z);
-                                AttackCollisions.transform.SetPositionAndRotation(Pos, AttackCollisions.transform.rotation);
-
-                                //Sets the colliders size to fit the attack radius
-                                Vector3 ColliderOffset = new Vector3(Players[TargetNum].GetComponent<MoveLibrary>().XOffset * 5, 0, -Players[TargetNum].GetComponent<MoveLibrary>().YOffset * 5);
-                                Vector3 ColliderSize = new Vector3(Players[TargetNum].GetComponent<MoveLibrary>().CollisionLength * 4, 1, Players[TargetNum].GetComponent<MoveLibrary>().CollisionWidth * 4);
-                                AttackCollisions.GetComponent<BoxCollider>().center = ColliderOffset;
-                                AttackCollisions.GetComponent<BoxCollider>().size = ColliderSize;
-                                AttackCollisions.gameObject.SetActive(true);
-
                             }
 
                         }

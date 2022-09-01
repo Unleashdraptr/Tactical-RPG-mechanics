@@ -30,7 +30,7 @@ public class TurnController : MonoBehaviour
                 PlayerTurnsTaken += 1;
             }
         }
-        if(PlayerTurnsTaken == Players.Length)
+        if(PlayerTurnsTaken == Players.Length-1)
         {
             state = GameTurn.EnemyTurn;
         }

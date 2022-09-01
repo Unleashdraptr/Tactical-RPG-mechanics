@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 83999005610465769}
   - component: {fileID: -2477033591773705243}
   - component: {fileID: 3260049991075668278}
-  - component: {fileID: -2245881193545670785}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -119,6 +118,10 @@ MonoBehaviour:
   NumID: 0
   TurnSpent: 0
   Player: 1
+  MoveNames:
+  - Tackle
+  - Move1
+  - Move2
 --- !u!114 &3260049991075668278
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132,25 +135,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsTarget: 0
-  Num: 0
   TargetPosition: {fileID: 0}
---- !u!114 &-2245881193545670785
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 83999005610465775}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ec44af8b769976479665a50e3336171, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  XOffset: 0
-  YOffset: 1
-  CollisionLength: 3
-  CollisionWidth: 1
-  DiceRolls: 0
-  MoveNumID: 0
-  Moveradius: 0
-  MoveOffset: 0

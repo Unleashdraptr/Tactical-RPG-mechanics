@@ -7,7 +7,6 @@ public class CharacterMovement : MonoBehaviour
     Transform[] TilePositions;
     GameObject Tiles;
     public bool IsTarget;
-    public int Num;
     public Transform TargetPosition;
     // Start is called before the first frame update
     void Start()
